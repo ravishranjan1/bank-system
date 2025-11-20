@@ -1,22 +1,53 @@
 package main.java.com.ApexLending.bank.model;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 public class Transaction {
-	private String id;
-	private String accountId;
-	private TransactionType type;
-	private double amount;
-	private LocalDateTime timeStamp;
-	private String note;
-	public Transaction(String id, String accountId, TransactionType type, double amount, LocalDateTime timeStamp,
-			String note) {
-		this.id = id;
+	private final String id;
+	private final String accountId;
+	private final TransactionType type;
+	private final double amount;
+	private final LocalDateTime timestamp;
+	private final String note;
+
+	public Transaction(String accountId, TransactionType type, double amount, String note) {
+		this.id = UUID.randomUUID().toString();
 		this.accountId = accountId;
 		this.type = type;
 		this.amount = amount;
-		this.timeStamp = timeStamp;
+		this.timestamp = LocalDateTime.now();
 		this.note = note;
 	}
+
+	public String getId() {
+		return id;
+	}
+
+	public String getAccountId() {
+		return accountId;
+	}
+
+	public TransactionType getType() {
+		return type;
+	}
+
+	public double getAmount() {
+		return amount;
+	}
+
+	public LocalDateTime getTimestamp() {
+		return timestamp;
+	}
+
+	public String getNote() {
+		return note;
+	}
+
+	@Override
+	public String toString() {
+		return String.format("%s | %s | %.2f | %s | %s", id, type, amount, timestamp, note == null ? "" : note);
+	}
 	
+
 }
