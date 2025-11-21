@@ -5,26 +5,27 @@ import java.time.LocalDateTime;
 
 import main.java.com.ApexLending.bank.exceptions.InsufficientFundsException;
 
-public class SavingsAccount extends Account{
-	private double annualInterestRate;
-	public SavingsAccount(String accountId, String customerId, double balance, boolean active, LocalDate openedDate, double annualInterestRate) {
-		super(accountId, customerId, balance, active, openedDate);
-		this.annualInterestRate = annualInterestRate;
-				
-	}
+public class SavingsAccount extends Account {
 
-	public void applyMonthlyInterest() {
-		double monthlyInterest = balance * (annualInterestRate/12);
-		System.out.println("Monthly Interest : "+monthlyInterest);
+	private double annualInterestRate;
+
+	public SavingsAccount(String accountId, String customerId, double initial, double annualInterestRate) {
+		super(accountId, customerId, initial);
+		this.annualInterestRate = annualInterestRate;
 	}
 
 	@Override
-	public void withdraw(double amount, LocalDateTime timeStamp) {
-		if(balance<amount) {
-			throw new InsufficientFundsException(amount);
+	protected boolean canWithdraw(double amount) {
+		return balance - amount >= 0;
+	}
+	
+	public synchronized double applyMonthlyInterest() {
+		double monthly = balance * (annualInterestRate/12);
+		if(monthly>0) {
+			balance = balance + monthly;
+			transactions.add(new Transaction(accountId,TransactionType.Interest,monthly,"Monthly Interest"));
 		}
-		balance = balance - amount;
-		transactions.add(new Transaction("TXN-WD", accountId, TransactionType.WITHDRAWAL, amount, timeStamp,"Withdrawal"));
+		return monthly;
 	}
 
 }
