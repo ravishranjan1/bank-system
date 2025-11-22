@@ -1,16 +1,27 @@
 package main.java.com.ApexLending.bank.service;
 
+import main.java.com.ApexLending.bank.model.Customer;
+import main.java.com.ApexLending.bank.util.IdGenerator;
+
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
-import main.java.com.ApexLending.bank.model.Customer;
-
 public class CustomerService {
 	private Map<String, Customer> customers = new HashMap<>();
-	private void addCustomer(Customer c) {
-		customers.put(c.getId(), c);
+
+	public Customer addCustomer(String name, String phone, String email) {
+		String id = IdGenerator.nextCustomerId();
+		Customer c = new Customer(id, name, phone, email);
+		customers.put(id, c);
+		return c;
 	}
-	private Customer findById(String id) {
+
+	public Customer findById(String id) {
 		return customers.get(id);
+	}
+
+	public Collection<Customer> all() {
+		return customers.values();
 	}
 }
