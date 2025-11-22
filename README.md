@@ -61,7 +61,7 @@ Types: DEPOSIT, WITHDRAW, TRANSFER (via TransactionType enum)
 Automatically apply interest to all savings accounts
 
 🧱 Technologies Used
-Java OOP
+Java OOP 
 Enums
 Custom Exceptions
 Services Layer
