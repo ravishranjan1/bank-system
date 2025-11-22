@@ -1,4 +1,4 @@
-package main.java.com.ApexLending.bank.model;
+package main.com.ApexLending.bank.model;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import main.java.com.ApexLending.bank.exceptions.BankException;
+import main.com.ApexLending.bank.exceptions.BankException;
 
 public abstract class Account {
 	protected final String accountId;

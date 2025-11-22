@@ -1,4 +1,4 @@
-package main.java.com.ApexLending.bank.exceptions;
+package main.com.ApexLending.bank.exceptions;
 
 public class InsufficientFundsException extends BankException{
 

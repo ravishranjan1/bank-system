@@ -1,10 +1,10 @@
-package main.java.com.ApexLending.bank;
+package main.com.ApexLending.bank;
 
 import java.util.Scanner;
 
-import main.java.com.ApexLending.bank.exceptions.*;
-import main.java.com.ApexLending.bank.service.*;
-import main.java.com.ApexLending.bank.model.*;
+import main.com.ApexLending.bank.exceptions.*;
+import main.com.ApexLending.bank.model.*;
+import main.com.ApexLending.bank.service.*;
 
 public class App {
 	private static final CustomerService customerService = new CustomerService();
@@ -12,7 +12,7 @@ public class App {
 
 	public static void main(String[] args) {
 		seedData();
-		System.out.println("Welcome to Simple Bank (console)");
+		System.out.println("Welcome to ApexLending Bank (console)");
 		Scanner sc = new Scanner(System.in);
 		while (true) {
 			System.out.print("\ncommand (help for list) > ");
@@ -144,8 +144,8 @@ public class App {
 
 	private static void applyInterest() {
 		accountService.all().values().forEach(a -> {
-			if (a instanceof main.java.com.ApexLending.bank.model.SavingsAccount) {
-				double added = ((main.java.com.ApexLending.bank.model.SavingsAccount) a).applyMonthlyInterest();
+			if (a instanceof SavingsAccount) {
+				double added = ((SavingsAccount) a).applyMonthlyInterest();
 				if (added > 0)
 					System.out.println("Interest added to " + a.getAccountId() + " : " + added);
 			}
@@ -159,3 +159,4 @@ public class App {
 		accountService.createSavings(c2.getId(), 2000.0, 0.03);
 	}
 }
+

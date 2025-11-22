@@ -1,4 +1,4 @@
-package java.com.ApexLending.bank;
+package com.ApexLending.bank;
 
 public class AccountServiceTest {
 

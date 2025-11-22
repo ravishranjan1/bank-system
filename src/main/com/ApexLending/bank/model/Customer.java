@@ -1,4 +1,4 @@
-package main.java.com.ApexLending.bank.model;
+package main.com.ApexLending.bank.model;
 
 public class Customer {
 	private final String id;

@@ -1,11 +1,11 @@
-package main.java.com.ApexLending.bank.service;
+package main.com.ApexLending.bank.service;
 
 import java.util.Map;
 import java.util.HashMap;
 
-import main.java.com.ApexLending.bank.exceptions.*;
-import main.java.com.ApexLending.bank.model.*;
-import main.java.com.ApexLending.bank.util.IdGenerator;
+import main.com.ApexLending.bank.exceptions.*;
+import main.com.ApexLending.bank.model.*;
+import main.com.ApexLending.bank.util.IdGenerator;
 
 public class AccountService {
 	private final Map<String, Account> accounts = new HashMap<>();

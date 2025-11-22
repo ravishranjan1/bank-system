@@ -1,4 +1,4 @@
-package main.java.com.ApexLending.bank.model;
+package main.com.ApexLending.bank.model;
 
 import java.time.LocalDateTime;
 import java.util.UUID;

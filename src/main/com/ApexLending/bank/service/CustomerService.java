@@ -1,7 +1,7 @@
-package main.java.com.ApexLending.bank.service;
+package main.com.ApexLending.bank.service;
 
-import main.java.com.ApexLending.bank.model.Customer;
-import main.java.com.ApexLending.bank.util.IdGenerator;
+import main.com.ApexLending.bank.model.Customer;
+import main.com.ApexLending.bank.util.IdGenerator;
 
 import java.util.Collection;
 import java.util.HashMap;

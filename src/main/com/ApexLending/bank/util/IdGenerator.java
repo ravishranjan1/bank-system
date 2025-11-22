@@ -1,4 +1,4 @@
-package main.java.com.ApexLending.bank.util;
+package main.com.ApexLending.bank.util;
 
 import java.util.concurrent.atomic.AtomicInteger;
 

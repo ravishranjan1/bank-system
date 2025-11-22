@@ -1,4 +1,4 @@
-package main.java.com.ApexLending.bank.service;
+package main.com.ApexLending.bank.service;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -6,8 +6,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import main.java.com.ApexLending.bank.model.Transaction;
-import main.java.com.ApexLending.bank.model.TransactionType;
+import main.com.ApexLending.bank.model.Transaction;
+import main.com.ApexLending.bank.model.TransactionType;
 
 public class TransactionService {
 	private final List<Transaction> allTransactions = new ArrayList<>();

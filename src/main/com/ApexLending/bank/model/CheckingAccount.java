@@ -1,8 +1,8 @@
-package main.java.com.ApexLending.bank.model;
+package main.com.ApexLending.bank.model;
 
 import java.time.LocalDateTime;
 
-import main.java.com.ApexLending.bank.exceptions.InsufficientFundsException;
+import main.com.ApexLending.bank.exceptions.InsufficientFundsException;
 
 public class CheckingAccount extends Account {
 	private double overdraftLimit;
